@@ -2,11 +2,11 @@ CREATE DATABASE Prueba01;
 
 USE Prueba01;
 
-CREATE TABLE personas(
+CREATE TABLE IF NOT EXISTS productos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
-    lastname VARCHAR(50) NOT NULL,
-    age INT
+    marca VARCHAR(50) NOT NULL,
+    precio INT
 );
 
-SELECT * FROM personas;
+SELECT * FROM productos;

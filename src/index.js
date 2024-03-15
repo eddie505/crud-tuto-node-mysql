@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import { engine } from 'express-handlebars';
 import {join, dirname} from 'path'
 import {fileURLToPath} from 'url'
-import personasRoutes from './routes/personas.routes.js'
+import productosRoutes from './routes/productos.routes.js'
 
 //Intialization
 const app = express();
@@ -29,8 +29,8 @@ app.use(express.json());
 app.get('/', (req, res)=>{
     res.render('index')
 })
-
-app.use(personasRoutes);
+app.get('/add', (req, res) => res.render('productos/add'));
+app.use(productosRoutes);
 
 //Public files
 app.use(express.static(join(__dirname, 'public')));
